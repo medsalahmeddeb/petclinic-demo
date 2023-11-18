@@ -1,0 +1,11 @@
+---
+- name: Copy war file
+  hosts: all
+  become: true
+  tasks:
+    - name: copy war file
+      copy:
+        src: target/petclinic.war
+        dest: /opt/tomcat8/webapps/
+        owner: tomcat
+        group: tomcat
